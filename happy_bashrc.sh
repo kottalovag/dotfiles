@@ -5,4 +5,4 @@
 
 ABS_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )"; pwd )"
 $ABS_ROOT_DIR/scripts/pull.sh
-$ABS_ROOT_DIR/scripts/setup.sh
+. $ABS_ROOT_DIR/scripts/ensure_setup.sh
