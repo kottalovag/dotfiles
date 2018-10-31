@@ -1,2 +1,2 @@
-git pull company
-git push origin
+git pull company master
+git push origin master
