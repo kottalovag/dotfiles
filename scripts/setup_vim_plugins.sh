@@ -19,7 +19,9 @@ repos=(
     "bundle/vim-ps1,https://github.com/PProvost/vim-ps1.git"
 )
 for repo in ${repos[@]}; do
+    # TODO fix this for cygwin
     IFS=',' read SUBPATH GITURL <<< "${bundle}"
+    echo $SUBPATH
     if [ ! -d ~/.vim/$SUBPATH ] && [ ! -L ~/.vim/$SUBPATH ] ; then
         cd ~/.vim/bundle
         git clone $GITURL
