@@ -9,4 +9,9 @@ source $ABS_ROOT_DIR/scripts/setup_aliases.sh
 
 cachegitcred
 
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 echo "happy setup done, see details at $(git --work-tree "$ABS_ROOT_DIR" --git-dir "$ABS_ROOT_DIR/.git" remote get-url origin)"
