@@ -15,7 +15,7 @@ fi
 
 #only pull once a day
 if [ "$((CURRENT_SECONDS - LAST_TOUCH_SECONDS))" -gt "$((60*60*24))" ]; then
-    git --work-tree "$ABS_ROOT_DIR" --git-dir "$ABS_ROOT_DIR/.git" pull origin master
+    git --work-tree "$ABS_ROOT_DIR" --git-dir "$ABS_ROOT_DIR/.git" -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=20 pull origin master
     touch $TOUCHED
 else
     echo "Already synced today, won't pull"
